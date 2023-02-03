@@ -219,8 +219,18 @@ const getJobs = async (location, departament, seniority, start) => {
   });
 };
 
+const getJobDetails = async (pid) => {
+  const url = process.env.REACT_APP_API_ROOT + `/jobs/details/?pid=${pid}`;
+  const response = await fetch(url, {
+    method: "GET",
+  }).then((r) => r.json());
+
+  return response;
+};
+
 const api = {
   getJobs,
+  getJobDetails,
 };
 
 export default api;
