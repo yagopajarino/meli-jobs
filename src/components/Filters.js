@@ -119,35 +119,32 @@ const SENIORITY = ["Mid/senior", "Entry", "Intern", "Director"];
 export default function Filters({ setLocation, setDepartament, setSeniority }) {
   return (
     <div>
-      <h3>Filters</h3>
       <div>
-        <div>
-          {/* <label>Ubicación </label> */}
-          <select onChange={(e) => setLocation(e.target.value)}>
-            <option>Ubicación</option>
-            {LOCATIONS.map((i) => (
-              <option value={i}>{i}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          {/* <label>Departamento </label> */}
-          <select onChange={(e) => setDepartament(e.target.value)}>
-            <option>Departamento</option>
-            {DEPARTAMENTS.map((i) => (
-              <option value={i}>{i}</option>
-            ))}
-          </select>
-        </div>
-        <div>
-          {/* <label>Seniority </label> */}
-          <select onChange={(e) => setSeniority(e.target.value)}>
-            <option>Seniority</option>
-            {SENIORITY.map((i) => (
-              <option value={i}>{i}</option>
-            ))}
-          </select>
-        </div>
+        {/* <label>Ubicación </label> */}
+        <select onChange={(e) => setLocation(e.target.value)}>
+          <option>Ubicación</option>
+          {LOCATIONS.map((i) => (
+            <option value={i}>{i}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        {/* <label>Departamento </label> */}
+        <select onChange={(e) => setDepartament(e.target.value)}>
+          <option>Departamento</option>
+          {DEPARTAMENTS.map((i) => (
+            <option value={i}>{i}</option>
+          ))}
+        </select>
+      </div>
+      <div>
+        {/* <label>Seniority </label> */}
+        <select onChange={(e) => setSeniority(e.target.value)}>
+          <option>Seniority</option>
+          {SENIORITY.map((i) => (
+            <option value={i}>{i}</option>
+          ))}
+        </select>
       </div>
     </div>
   );
