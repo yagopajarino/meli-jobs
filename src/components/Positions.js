@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import helpers from "../functions/helpers";
+import External from "./External";
 
 export default function Positions({ positions }) {
   const [keys, setKeys] = useState([]);
@@ -9,7 +11,13 @@ export default function Positions({ positions }) {
     }
   }, [positions]);
 
-  const EXCLUDED = ["job_description", "medallionProgram", "is_global"];
+  const EXCLUDED = [
+    "job_description",
+    "medallionProgram",
+    "is_global",
+    "locale",
+    "stars",
+  ];
 
   return positions.length == 0 ? (
     ""
@@ -20,6 +28,7 @@ export default function Positions({ positions }) {
           {keys.map((i) => {
             return <th>{i}</th>;
           })}
+          <th>url</th>
         </thead>
         {positions.map((i) => {
           return (
@@ -28,18 +37,18 @@ export default function Positions({ positions }) {
                 .filter((i) => !EXCLUDED.includes(i))
                 .map((k) => {
                   if (["t_create", "t_update"].includes(k)) {
-                    const date = new Date(i[k] * 1000);
                     return (
-                      <td>
-                        {date.toLocaleDateString() +
-                          " " +
-                          date.toLocaleTimeString()}
-                      </td>
+                      <td>{helpers.getDateTimeStringFromTimestamp(i[k])}</td>
                     );
                   } else {
                     return <td>{i[k]}</td>;
                   }
                 })}
+              <td>
+                <a href={helpers.getJobLink(i.id)}>
+                  <External />
+                </a>
+              </td>
             </tr>
           );
         })}
