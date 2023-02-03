@@ -3,6 +3,7 @@ import Filters from "./Filters.js";
 import Positions from "./Positions.js";
 import api from "../api/api.js";
 import Spinner from "./Spinner.js";
+import Lookup from "./Lookup.js";
 
 export default function Main() {
   const [positions, setPositions] = useState([]);
@@ -59,6 +60,10 @@ export default function Main() {
 
   return (
     <main>
+      <Lookup />
+      <div>
+        <h2>Browse</h2>
+      </div>
       <Filters
         setLocation={setLocation}
         setDepartament={setDepartament}
