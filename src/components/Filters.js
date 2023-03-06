@@ -118,10 +118,13 @@ const SENIORITY = ["Mid/senior", "Entry", "Intern", "Director"];
 
 export default function Filters({ setLocation, setDepartament, setSeniority }) {
   return (
-    <div>
+    <div className="flex space-x-2">
       <div>
         {/* <label>Ubicación </label> */}
-        <select onChange={(e) => setLocation(e.target.value)}>
+        <select
+          className="text-lg my-2 p-2 border-2 rounded border-gray-400 focus-visible:outline-none"
+          onChange={(e) => setLocation(e.target.value)}
+        >
           <option>Ubicación</option>
           {LOCATIONS.map((i) => (
             <option value={i}>{i}</option>
@@ -130,7 +133,10 @@ export default function Filters({ setLocation, setDepartament, setSeniority }) {
       </div>
       <div>
         {/* <label>Departamento </label> */}
-        <select onChange={(e) => setDepartament(e.target.value)}>
+        <select
+          className="text-lg my-2 p-2 border-2 rounded border-gray-400 focus-visible:outline-none"
+          onChange={(e) => setDepartament(e.target.value)}
+        >
           <option>Departamento</option>
           {DEPARTAMENTS.map((i) => (
             <option value={i}>{i}</option>
@@ -139,7 +145,10 @@ export default function Filters({ setLocation, setDepartament, setSeniority }) {
       </div>
       <div>
         {/* <label>Seniority </label> */}
-        <select onChange={(e) => setSeniority(e.target.value)}>
+        <select
+          className="text-lg my-2 p-2 border-2 rounded border-gray-400 focus-visible:outline-none"
+          onChange={(e) => setSeniority(e.target.value)}
+        >
           <option>Seniority</option>
           {SENIORITY.map((i) => (
             <option value={i}>{i}</option>
