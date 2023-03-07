@@ -59,18 +59,18 @@ export default function Main() {
   }, [yscroll]);
 
   return (
-    <main>
+    <main className="flex flex-col items-center w-full">
       <Lookup />
-      <div>
-        <h2>Browse</h2>
+      <div className="w-full px-5">
+        <h2 className="text-3xl pb-5 font-medium">Posiciones 'abiertas' 👀</h2>
+        <Filters
+          setLocation={setLocation}
+          setDepartament={setDepartament}
+          setSeniority={setSeniority}
+        />
+        <Positions positions={positions} />
+        {loading ? <Spinner /> : ""}
       </div>
-      <Filters
-        setLocation={setLocation}
-        setDepartament={setDepartament}
-        setSeniority={setSeniority}
-      />
-      <Positions positions={positions} />
-      {loading ? <Spinner /> : ""}
     </main>
   );
 }
