@@ -17,6 +17,13 @@ export default function Positions({ positions }) {
     "is_global",
     "locale",
     "stars",
+    "hot",
+    "locations",
+    "ats_job_id",
+    "display_job_id",
+    "type",
+    "id_locale",
+    "location_flexibility",
   ];
 
   return positions.length == 0 ? (
