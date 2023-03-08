@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/meli-jobs/static/css/main.7e4b2a8a.css",
+    "main.js": "/meli-jobs/static/js/main.405d9771.js",
+    "static/media/github-mark-white.svg": "/meli-jobs/static/media/github-mark-white.3cdb1ae47f8c028447f8f9204e6b768e.svg",
+    "index.html": "/meli-jobs/index.html",
+    "main.7e4b2a8a.css.map": "/meli-jobs/static/css/main.7e4b2a8a.css.map",
+    "main.405d9771.js.map": "/meli-jobs/static/js/main.405d9771.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7e4b2a8a.css",
+    "static/js/main.405d9771.js"
+  ]
+}
