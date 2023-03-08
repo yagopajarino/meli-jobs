@@ -4,12 +4,14 @@ import Popup from "./Popup.js";
 
 export default function JobInfo({ data }) {
   const [showPopUp, setShowPopUp] = useState(false);
-  const [showed, setShowed] = useState(false);
+  const [showed, setShowed] = useState(-1);
 
   useEffect(() => {
     const item = JSON.parse(localStorage.getItem("cafecito"));
     if (item) {
       setShowed(item);
+    } else {
+      setShowed(false);
     }
   }, []);
 
@@ -20,7 +22,7 @@ export default function JobInfo({ data }) {
         localStorage.setItem("cafecito", JSON.stringify(true));
       }, 5000);
     }
-  }, []);
+  }, [showed]);
 
   return (
     <div className="flex flex-row text-xl pt-12 pb-5 w-full justify-evenly items-center">
