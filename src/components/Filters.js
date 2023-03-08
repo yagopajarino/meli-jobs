@@ -118,7 +118,7 @@ const SENIORITY = ["Mid/senior", "Entry", "Intern", "Director"];
 
 export default function Filters({ setLocation, setDepartament, setSeniority }) {
   return (
-    <div className="flex space-x-2">
+    <div className="flex md:space-x-2 flex-col md:flex-row">
       <div>
         {/* <label>Ubicación </label> */}
         <select
